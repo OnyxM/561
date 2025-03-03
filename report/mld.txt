@@ -1,0 +1,27 @@
+CREATE TABLE institutions (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE annees (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(4) NOT NULL
+);
+
+CREATE TABLE articles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name TEXT NOT NULL,
+    annee_id INT
+);
+
+CREATE TABLE auteurs (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    institution_id INT
+);
+
+CREATE TABLE articles_auteurs (
+    article_id INT,
+    auteur_id INT,
+    PRIMARY KEY (article_id, auteur_id)
+);
